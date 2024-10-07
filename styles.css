@@ -1,5 +1,367 @@
+/* Reset some default browser styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Header Styling */
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Swiper Styling */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Example slide backgrounds */
+.slide1 {
+  background-image: url("images/blankpanther.jpeg");
+}
+
+.slide2 {
+  background-image: url("images/deadpool.jpeg");
+}
+
+.slide3 {
+  background-image: url("images/spongy.png");
+}
+
+/* Slide Content Styling */
+.slide-content {
+  position: absolute;
+  color: white;
+  padding: 20px;
+  max-width: 50%;
+  border-radius: 8px;
+}
+
+/* Positioning for different slides */
+.slide-content.left {
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.slide-content.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.slide-content.right {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+/* Header Overlay */
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2; /* Above the overlay */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.rosy {
+  color: #ff6b81; /* Rosy color for initials */
+}
+
+.nav-icons a {
+  color: white;
+  font-size: 20px;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.nav-icons a:hover {
+  color: #ff6b81;
+}
+
+#search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 200px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+#search-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #ff6b81;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+
+#search-button:hover {
+  background-color: #ff4757;
+}
+
+/* Header Content */
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.header-content p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main Content Styling */
+main {
+  flex: 1;
+}
+
+#movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.movie-card .movie-info {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.movie-card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.movie-card button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.movie-card button:hover {
+  background-color: #ff4757;
+}
+
+/* Movie Details Styling */
+#movie-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+#movie-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+#movie-details h2 {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+#movie-details p {
+  margin: 10px 0;
+  color: #555;
+}
+
+#movie-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+#movie-details ul li {
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  color: #333;
+}
+
+#movie-details button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#movie-details button:hover {
+  background-color: #ff4757;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Overlay for Movie Details */
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+#movie-details:not(.hidden) ~ body::before {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Swiper Pagination Dots Styling */
+.swiper-pagination-bullets {
+  bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff6b81;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .slide-content.left,
+  .slide-content.right {
+    max-width: 80%;
+  }
+
+  #search-input {
+    width: 150px;
+  }
 }

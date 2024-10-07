@@ -3,17 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-
     <title>RD Movies</title>
+    <!-- Link to Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-dE8x+3aY6Odo6xQ9gEJw4+g6JD86LhtTghH6a6R+v9zG1e0Tj1LqWmYQOSyBDxQJZtQ/5LErjDEffW6cPGVYjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Link to Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Link to your updated CSS file -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header>
+      <!-- Swiper Container -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide slide1">
+            <div class="slide-content left">
+              <h1>Blackpanther</h1>
+              <p>Deep dive into the african mystery of wankanda.</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide slide2">
+            <div class="slide-content center">
+              <h1>Dead pool and wolverine</h1>
+              <p>
+                Deadpool's peaceful existence comes crashing down when the Time
+                Variance Authority recruits him to help safeguard the
+                multiverse. .
+              </p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide slide3">
+            <div class="slide-content right">
+              <h1>Sponge bob</h1>
+              <p>
+                He embarks on various adventures with his friends at Bikini
+                Bottom.
+              </p>
+            </div>
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- Overlay for Darkening the Slides -->
+      <div class="header-overlay"></div>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo"><span class="rosy">RD</span> Movies</div>
+        <div id="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a movie..."
+          />
+          <button id="search-button">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="movie-list"></div>
+      <div id="movie-details" class="hidden"></div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 RD Movies. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Link to your updated JS file -->
     <script src="custom.js"></script>
   </body>
 </html>
