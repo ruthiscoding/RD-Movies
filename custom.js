@@ -17,7 +17,7 @@ const swiper = new Swiper(".swiper-container", {
 
 // Existing Movie Database Functionality
 
-const API_KEY = "84eb3a04"; // Use your API key directly
+const API_KEY = "74b14366"; // Use your API key directly
 const BASE_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const searchButton = document.getElementById("search-button");
